@@ -1,0 +1,573 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Clove Dental</title> 
+</head> 
+<body> 
+    <style>
+        /* Basic reset to ensure consistency across browsers */ 
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+ 
+body { 
+    font-family: 'Roboto', sans-serif; 
+    line-height: 1.6; 
+    background-color: #f5f5f5; 
+    color: #333; 
+} 
+ 
+/* Header Styles */ 
+header { 
+    background-color: #fff; 
+    padding: 15px 0; 
+    border-bottom: 1px solid #eee; 
+} 
+ 
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 15px; 
+} 
+ 
+.logo { 
+    display: inline-block; 
+    margin-right: 20px; 
+} 
+ 
+.logo img { 
+    height: 40px; 
+} 
+ 
+nav ul { 
+    list-style: none; 
+    display: flex; 
+    margin: 0; 
+    padding: 0; 
+} 
+ 
+nav ul li { 
+    margin-right: 20px; 
+} 
+ 
+nav ul li:last-child { 
+    margin-right: 0; 
+} 
+ 
+nav ul li a { 
+    text-decoration: none; 
+    color: #333; 
+    font-weight: 500; 
+} 
+ 
+.actions { 
+    display: flex; 
+    align-items: center; 
+} 
+ 
+.book-appointment { 
+    background-color: #f05050; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    text-decoration: none; 
+    margin-right: 15px; 
+} 
+ 
+.help { 
+    color: #f05050; 
+    font-weight: bold; 
+    text-decoration: none; 
+} 
+ 
+/* Hero Section Styles */ 
+.hero { 
+    position: relative; 
+    background-color: #f5f5f5; 
+    padding: 60px 0; 
+    margin-bottom: 60px; 
+} 
+ 
+.hero-content { 
+    max-width: 500px; 
+    margin-right: 30px; 
+    text-align: left; 
+} 
+ 
+.hero-content h1 { 
+    font-size: 36px; 
+    font-weight: bold; 
+    margin-bottom: 15px; 
+} 
+ 
+.hero-content p { 
+    font-size: 18px; 
+    line-height: 1.5; 
+    margin-bottom: 20px; 
+} 
+ 
+.buy-now { 
+    background-color: #f05050; 
+    color: #fff; 
+    padding: 12px 25px; 
+    border: none; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    text-decoration: none; 
+    cursor: pointer; 
+} 
+ 
+.hero-image { 
+    float: right; 
+} 
+ 
+.hero-image img { 
+    max-width: 100%; 
+    height: auto; 
+} 
+ 
+.hero-indicators { 
+    position: absolute; 
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex; 
+} 
+ 
+.indicator { 
+    width: 10px; 
+    height: 10px; 
+    background-color: #ccc; 
+    border-radius: 50%; 
+    margin: 0 5px; 
+    cursor: pointer; 
+} 
+ 
+.indicator.active { 
+    background-color: #f05050; 
+} 
+ 
+/* Services Section Styles */ 
+.services { 
+    background-color: #fff; 
+    padding: 60px 0; 
+    margin-bottom: 60px; 
+} 
+ 
+.services h2 { 
+    text-align: center; 
+    margin-bottom: 30px; 
+} 
+ 
+.service-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; 
+} 
+ 
+.service { 
+    text-align: center; 
+    padding: 20px; 
+    border: 1px solid #eee; 
+    border-radius: 5px; 
+} 
+ 
+.service img { 
+    width: 80px; 
+    height: 80px; 
+    margin-bottom: 15px; 
+} 
+ 
+.service h3 { 
+    margin-bottom: 10px; 
+} 
+ 
+.explore-treatments { 
+    background-color: #f05050; 
+    color: #fff; 
+    padding: 12px 25px; 
+    border: none; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    text-decoration: none; 
+    cursor: pointer; 
+    display: block; 
+    margin: 30px auto; 
+    text-align: center; 
+} 
+ 
+/* Expert Guidance Section Styles */ 
+.expert-guidance { 
+    background-color: #f5f5f5; 
+    padding: 60px 0; 
+    margin-bottom: 60px; 
+} 
+ 
+.guidance-content { 
+    max-width: 500px; 
+    margin-right: 30px; 
+    text-align: left; 
+} 
+ 
+.guidance-content h2 { 
+    font-size: 30px; 
+    font-weight: bold; 
+    margin-bottom: 15px; 
+} 
+ 
+.guidance-content p { 
+    font-size: 16px; 
+    line-height: 1.5; 
+    margin-bottom: 20px; 
+} 
+ 
+.guidance-content form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+} 
+ 
+.guidance-content input, 
+.guidance-content select { 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+} 
+ 
+.book-consultation { 
+    background-color: #f05050; 
+    color: #fff; 
+    padding: 12px 25px; 
+    border: none; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    text-decoration: none; 
+    cursor: pointer; 
+} 
+ 
+.safety-protocols { 
+    max-width: 350px; 
+    text-align: left; 
+} 
+ 
+.safety-protocols h2 { 
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+} 
+ 
+.safety-protocols p { 
+    font-size: 14px; 
+    line-height: 1.5; 
+    margin-bottom: 15px; 
+} 
+ 
+.learn-more { 
+    background-color: #f05050; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    text-decoration: none; 
+    cursor: pointer; 
+} 
+ 
+.image-container { 
+    float: right; 
+} 
+ 
+.image-container img { 
+    max-width: 100%; 
+    height: auto; 
+} 
+ 
+/* Features Styles */ 
+.features { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 30px; 
+} 
+ 
+.feature { 
+    text-align: center; 
+    padding: 20px; 
+    border: 1px solid #eee; 
+    border-radius: 5px; 
+} 
+ 
+.feature img { 
+    width: 60px; 
+    height: 60px; 
+    margin-bottom: 15px; 
+} 
+ 
+.feature h3 { 
+    margin-bottom: 10px; 
+} 
+ 
+/* Testimonials Section Styles */ 
+.testimonials { 
+    background-color: #fff; 
+    padding: 60px 0; 
+    margin-bottom: 60px; 
+} 
+ 
+.testimonials h2 { 
+    text-align: center; 
+    margin-bottom: 30px; 
+} 
+ 
+.testimonial-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; 
+} 
+ 
+.testimonial { 
+    text-align: center; 
+    padding: 20px; 
+    border: 1px solid #eee; 
+    border-radius: 5px; 
+} 
+ 
+.testimonial img { 
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    margin-bottom: 15px; 
+} 
+ 
+.testimonial h3 { 
+    margin-bottom: 10px; 
+} 
+ 
+.testimonial p { 
+    font-size: 14px; 
+    line-height: 1.5; 
+} 
+ 
+/* Footer Styles */ 
+footer { 
+    background-color: #333; 
+    color: #fff; 
+    padding: 20px 0; 
+    text-align: center; 
+} 
+ 
+/* Responsive Styles */ 
+@media (max-width: 768px) { 
+    .hero-content { 
+        margin-right: 0; 
+    } 
+ 
+    .hero-image { 
+        float: none; 
+        margin-top: 20px; 
+    } 
+ 
+    .expert-guidance { 
+        flex-direction: column; 
+    } 
+ 
+    .guidance-content, 
+    .safety-protocols, 
+    .image-container { 
+        margin-bottom: 20px; 
+    } 
+ 
+    .features { 
+        flex-direction: column; 
+        gap: 20px; 
+    } 
+} 
+    </style>
+    <header> 
+        <div class="container"> 
+            <a href="#" class="logo"> 
+                <img src="logo.png" alt="Clove Dental Logo"> 
+            </a> 
+            <nav> 
+                <ul> 
+                    <li><a href="#">Treatments</a></li> 
+                    <li><a href="#">Dental Plans</a></li> 
+                    <li><a href="#">Our Doctors</a></li> 
+                    <li><a href="#">Careers</a></li> 
+                    <li><a href="#">Find a Clinic</a></li> 
+                </ul> 
+            </nav> 
+            <div class="actions"> 
+                <button class="book-appointment">Book Appointment</button> 
+                <a href="#" class="help">Help?</a> 
+            </div> 
+        </div> 
+    </header> 
+     
+    <section class="hero"> 
+        <div class="container"> 
+            <div class="hero-content"> 
+                <h1>Advance Dental Health Plan</h1> 
+                <p>Dental care worth ₹8,000/-</p> 
+                <p>only at ₹550/-</p> 
+                <button class="buy-now">Buy Now</button> 
+            </div> 
+            <div class="hero-image"> 
+                <img src="hero-image.png" alt="Smiling Woman"> 
+            </div> 
+        </div> 
+        <div class="hero-indicators"> 
+            <span class="indicator active"></span> 
+            <span class="indicator"></span> 
+            <span class="indicator"></span> 
+        </div> 
+    </section> 
+     
+    <section class="services"> 
+        <div class="container"> 
+            <h2>All dental issues from simple cleaning to full mouth 
+rehabilitation under one roof</h2> 
+            <div class="service-grid"> 
+                <div class="service"> 
+                    <img src="icon-root-canal.png" alt="Root Canal Treatment"> 
+                    <h3>Root Canal Treatment</h3> 
+                </div> 
+                <div class="service"> 
+                    <img src="icon-braces.png" alt="Braces"> 
+                    <h3>Braces</h3> 
+                </div> 
+                <div class="service"> 
+                    <img src="icon-teeth-whitening.png" alt="Teeth Whitening"> 
+                    <h3>Teeth Whitening</h3> 
+                </div> 
+                <div class="service"> 
+                    <img src="icon-invisible-braces.png" alt="Invisible 
+Braces"> 
+                    <h3>Invisible Braces</h3> 
+                </div> 
+                <div class="service"> 
+                    <img src="icon-dental-implants.png" alt="Dental Implants"> 
+                    <h3>Dental Implants</h3> 
+                </div> 
+                <div class="service"> 
+                    <img src="icon-smile-makeover.png" alt="Smile Makeover"> 
+                    <h3>Smile Makeover</h3> 
+                </div> 
+                <div class="service"> 
+                    <img src="icon-kids-dentistry.png" alt="Kids Dentistry"> 
+                    <h3>Kids Dentistry</h3> 
+                </div> 
+                <div class="service"> 
+                    <img src="icon-gum-treatment.png" alt="Gum Treatment"> 
+                    <h3>Gum Treatment</h3> 
+                </div> 
+                <div class="service"> 
+                    <img src="icon-wisdom-tooth.png" alt="Wisdom Tooth"> 
+                    <h3>Wisdom Tooth</h3> 
+                </div> 
+                <div class="service"> 
+                    <img src="icon-laser-dentistry.png" alt="Laser/Painless 
+Dentistry"> 
+                    <h3>Laser/Painless Dentistry</h3> 
+                </div> 
+                <div class="service"> 
+                    <img src="icon-crowns-bridges.png" alt="Crowns & Bridges"> 
+                    <h3>Crowns & Bridges</h3> 
+                </div> 
+                <div class="service"> 
+                    <img src="icon-dentures.png" alt="Dentures"> 
+                    <h3>Dentures</h3> 
+                </div> 
+            </div> 
+            <button class="explore-treatments">Explore Treatments →</button> 
+        </div> 
+    </section> 
+ 
+    <section class="expert-guidance"> 
+        <div class="container"> 
+            <div class="guidance-content"> 
+                <h2>Expert Guidance for Healthy Smiles</h2> 
+                <p>Contact Now</p> 
+                <form> 
+                    <input type="text" placeholder="Name" required> 
+                    <input type="tel" placeholder="Mobile Number" required> 
+                    <select> 
+                        <option value="">Select Concern</option> 
+                        <!-- Add options for different concerns --> 
+                    </select> 
+                    <button class="book-consultation">Book A Free 
+Consultation</button> 
+                </form> 
+            </div> 
+            <div class="safety-protocols"> 
+                <h2>10x Safety Protocols</h2> 
+                <p>with UV light sterilized equipment at all clinic</p> 
+                <button class="learn-more">Learn More →</button> 
+            </div> 
+            <div class="image-container"> 
+                <img src="expert-guidance-image.png" alt="Doctor explaining"> 
+            </div> 
+        </div> 
+        <div class="features"> 
+            <div class="feature"> 
+                <img src="icon-neighbourhood-clinics.png" alt="Neighbourhood 
+Clinics"> 
+                <h3>450+ Neighbourhood Clinics Pan India</h3> 
+            </div> 
+            <div class="feature"> 
+                <img src="icon-expert-doctors.png" alt="Expert Doctors"> 
+                <h3>1200+ Expert Doctors Covering All Specialities</h3> 
+            </div> 
+        </div> 
+    </section> 
+ 
+    <section class="testimonials"> 
+        <div class="container"> 
+            <h2>In their Own Words</h2> 
+            <div class="testimonial-grid"> 
+                <div class="testimonial"> 
+                    <img src="testimonial-image-1.png" alt="Testimonial Image 
+1"> 
+                    <h3>Shubham</h3> 
+                    <p>Braces</p> 
+                </div> 
+                <div class="testimonial"> 
+                    <img src="testimonial-image-2.png" alt="Testimonial Image 
+2"> 
+                    <h3>Shubham</h3> 
+                    <p>Braces</p> 
+                </div> 
+                <div class="testimonial"> 
+                    <img src="testimonial-image-3.png" alt="Testimonial Image 
+3"> 
+                    <h3>Shubham</h3> 
+                    <p>Braces</p> 
+                </div> 
+                <div class="testimonial"> 
+                    <img src="testimonial-image-4.png" alt="Testimonial Image 
+4"> 
+                    <h3>Shubham</h3> 
+                    <p>Braces</p> 
+                </div> 
+                <div class="testimonial"> 
+                    <img src="testimonial-image-5.png" alt="Testimonial Image 
+5"> 
+                    <h3>Shubham</h3> 
+                    <p>Braces</p> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
+ 
+    <footer> 
+        <div class="container"> 
+            <p>&copy; 2024 Clove Dental. All rights reserved.</p> 
+        </div> 
+    </footer> 
+</body> 
+</html>
